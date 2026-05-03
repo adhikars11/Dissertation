@@ -1,0 +1,194 @@
+\documentclass[12pt]{article} %V1.0
+\usepackage{amsfonts,amssymb,amsmath,mathrsfs,amsthm}
+\usepackage{graphicx,caption,lipsum}
+\usepackage{epsfig,epstopdf}
+\usepackage{nccmath}
+%\usepackage{harvard}
+
+%\usepackage[margin=2cm]{geometry}
+\usepackage[bottom=1in,top=1in,left=1in,right=1in]{geometry}
+\setlength{\parindent}{0cm}
+
+%\setlength{\leftmargini}{16pt}
+
+\usepackage[dvipsnames]{xcolor} % en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage{enumitem} % bullet points
+\usepackage{cmap} % fix the 'fi' problem
+\usepackage{rotating,wrapfig,lscape}
+\usepackage{bbm}
+\usepackage{mathtools} % for multi-lined equations
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage[export]{adjustbox}
+\usepackage{setspace}
+
+\onehalfspacing
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}
+ 
+
+\linespread{1.25}
+\setlength{\parindent}{24pt}
+
+
+
+% HYPERLINK
+\usepackage[breaklinks=true]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  citecolor=darkblue,
+  linkcolor=darkblue,
+  urlcolor=darkblue,
+  pdfpagemode=none,
+  pdfstartview={XYZ null null 1},
+  pdftitle={},
+  pdfauthor={GH},
+  pdfkeywords={} }
+\definecolor{darkblue}{rgb}{0,0,0.25}
+%
+
+% BIBLIOGRAPHY
+\usepackage[longnamesfirst]{natbib}
+\bibliographystyle{chicago}
+%\bibliographystyle{econometrica}
+
+% DEFINITIONS
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}%[section]
+
+\captionsetup[figure]{labelsep=period}
+
+\usepackage{palatino}
+
+\setlength{\footnotesep}{1em}
+
+\usepackage{nameref}
+
+\graphicspath{{./figs181014/}}
+%---------------------------------------------------------------------------------
+
+\begin{document}
+
+%---------------------------------------------------------------------------------
+
+
+\noindent {\large \textbf{Heterogeneous bargaining power version}}   
+
+\vspace{0.5cm}
+
+\noindent \normalsize  \textbf{Shisham Adhikari}
+
+\noindent University of California - Davis
+
+\vspace{0.7cm}
+
+
+\normalsize
+
+\section*{Edited Version}
+
+In this new version of the model, everything follows the baseline model with scar except for the assumption on bargaining power. Specifically, inexperienced workers (types \(0\) and \(\tilde{0}\)) have bargaining power \(\eta_0\), while experienced workers (types \(1\) and \(\tilde{1}\)) have bargaining power \(\eta_1\). 
+
+All Beveridge curves and value functions remain unchanged. Only the structure of the bargaining problems in different types of meetings is modified, which affects the derivation of the wage curves as shown below.
+
+\subsection*{Bargaining problems}\label{section bargaining}
+
+\noindent \textbf{Bargaining in a type-1 meeting}
+
+\medskip
+
+\noindent The standard Nash bargaining condition is:
+\begin{equation}
+(1-\eta_1)(W_1 - U_1) = \eta_1 \, J_1. \label{eq bargain 1_mod}
+\end{equation}
+Replacing $W_1$ and $J_1$ in the above, the type-1 wage can be written as
+\[
+w_1 \;=\; \eta_1 \, p + (1-\eta_1)\,z + \eta_1 \, f_1 \, J_1.
+\]
+Further substitution and rearrangement deliver the wage curve:
+\begin{equation}
+w_1 \;=\; \frac{\eta_1 \, p \,\bigl(r+\lambda+\delta+f_1\bigr)\;+\;\bigl(1-\eta_1\bigr)\,z\,\bigl(r+\lambda+\delta\bigr)}{r+\lambda+\delta\;+\;\eta_1\, f_1}.
+\label{eq WC 1_mod}
+\end{equation}
+
+Clearly, this is a relationship between the wage for type-1 workers and their job arrival rate, which, in turn, depends on firm entry and market tightness. 
+
+\bigskip 
+\noindent \textbf{Bargaining in a type-$\tilde{1}$ meeting}
+
+\medskip
+
+\noindent The standard Nash bargaining condition is:
+\begin{equation}
+(1-\eta_1)\bigl(\tilde{W_1} - \tilde{U_1}\bigr) \;=\; \eta_1 \,\tilde{J_1}.
+\label{eq bargain 1_tilde_mod}
+\end{equation}
+By substituting the relevant value functions and rearranging, the wage curve for type-$\tilde{1}$ workers is:
+\begin{equation}
+\tilde{w_1} 
+\;=\; \frac{\eta_1 \,\bigl(p - \tilde{\kappa}\bigr)\bigl(r+\lambda+\delta+\tilde{f_1}\bigr)
+\;+\;\bigl(1-\eta_1\bigr)\,z\,\bigl(r+\lambda+\delta\bigr)}
+{r+\lambda+\delta\;+\;\eta_1\,\tilde{f_1}}.
+\label{eq WC 1_tilde_mod}
+\end{equation}
+\bigskip 
+
+\noindent \textbf{Bargaining in a type-$\tilde{0}$ meeting}
+
+\medskip
+
+\noindent The standard Nash condition is:
+\[
+(1-\eta_0)\bigl(\tilde{W_0} - \tilde{U_0}\bigr) \;=\; \eta_0 \,\tilde{J_0},
+\]
+which leads to the following wage curve for type-$\tilde{0}$ workers:
+\begin{equation} 
+\label{eq WC0_tilde_mod}
+\begin{split}
+\tilde{w_0} \;=\; \frac{1}{r+\delta+\eta_0 \,\tilde{f_0}}
+\Bigl[
+&\,\eta_0\,\bigl(p-\kappa-\tilde{\kappa}\bigr)\,\bigl(r+\delta+\tilde{f_0}\bigr) \\
+&\quad+\;\frac{\bigl(r+\delta+\lambda\bigr)\bigl(r+\delta+\tilde{f_1}\bigr)}{r+\delta+\lambda+\tilde{f_1}}\,(1-\eta_0)\,z \\
+&\quad-\;\frac{\lambda\,(1-\eta_0)\,\tilde{f_1}}{r+\delta+\lambda+\tilde{f_1}}\;\tilde{w_1}
+\Bigr].
+\end{split}
+\end{equation}
+
+\bigskip
+
+\noindent \textbf{Bargaining in a type-0 meeting}
+
+\medskip
+
+\noindent The standard Nash condition here is:
+\[
+(1-\eta_0)\bigl(W_0 - U_0\bigr) \;=\; \eta_0\,J_0,
+\]
+which yields the wage curve for type-0 workers:
+\begin{equation}\label{eq WC0_mod}
+\begin{split}
+w_0 \;=\;& \frac{r+\delta+\gamma+f_0}{r+\delta+\gamma+\eta_0\,f_0}\;\eta_0\,(p-\kappa) \\
+&\;+\;\frac{(r+\lambda+\delta)\,(r+f_1+\delta)\,(r+\gamma+\delta)}{(r+\delta)\,\bigl(r+\delta+\gamma+\eta_0\,f_0\bigr)\,\bigl(r+\delta+\lambda+f_1\bigr)}\,(1-\eta_0)\,z \\  
+&\;+\;\frac{\gamma\,\tilde{f_0}\,\eta_0\,\bigl(p-\kappa-\tilde{\kappa}-\tilde{w_0}\bigr)}{(r+\delta)\,\bigl(r+\delta+\gamma+\eta_0\,f_0\bigr)} \\
+&\;-\;\frac{(1-\eta_0)\,\lambda\,f_1\,(r+\gamma+\delta)\,w_1}{(r+\delta)\,\bigl(r+\delta+\gamma+\eta_0\,f_0\bigr)\,\bigl(r+\delta+\lambda+f_1\bigr)}.
+\end{split}
+\end{equation}
+
+\subsection{Definition of Steady State Equilibrium}
+
+\noindent A steady state equilibrium is a list of wages 
+$
+\bigl(w_0, \tilde{w_0}, w_1, \tilde{w_1}\bigr),
+$
+a measure of vacant firms \(v\), and measures of unemployed and employed workers in all states,
+$
+\bigl(u_0, \tilde{u_0}, u_1, \tilde{u_1}, e_0, \tilde{e_0}, e_1, \tilde{e_1}\bigr),
+$
+satisfying the free-entry condition, the four wage curves (e.g., \eqref{eq WC0_mod}, its counterpart for \(\tilde{w_0}\), and the type-1 analogs), and the corresponding Beveridge curves.
+\end{document}

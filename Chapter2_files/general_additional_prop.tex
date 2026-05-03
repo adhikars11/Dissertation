@@ -1,0 +1,291 @@
+\documentclass[12pt]{article} %V5.1 - Corrected z Interpretation
+\usepackage{amsfonts,amssymb,amsmath,mathrsfs,amsthm}
+\usepackage{graphicx,caption}
+\usepackage{epsfig,epstopdf}
+\usepackage{nccmath}
+\usepackage{float}
+\usepackage[bottom=1in,top=1in,left=1in,right=1in]{geometry}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{bbm}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{setspace}
+\onehalfspacing
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\usepackage[breaklinks=true]{hyperref}
+\definecolor{darkblue}{rgb}{0,0,0.25}
+\hypersetup{
+  colorlinks=true,
+  citecolor=blue,
+  linkcolor=darkblue,
+  urlcolor=darkblue,
+  pdfpagemode=none
+}
+
+\begin{document}
+
+\noindent {\large Capital Holdup, Skill Supply, and Industrial Policy under Search Frictions}
+
+\vspace{0.6cm}
+
+\section*{GE labor wedge induced by the capital wedge}\label{app:GE_L_wedge}
+
+\subsection*{Setup}\label{app:GE_L_setup}
+Assume the Hosios condition holds, $\beta=\eta$. The equilibrium labor allocation $L_s$ is pinned down by the sectoral indifference condition
+\begin{equation}\label{eq:SC_exact}
+F(L_s, k_m, k_s) \;\equiv\; r(\epsilon_m - \epsilon_s) - \big[R_m(L_s, k_m, k_s) - R_s(L_s, k_m, k_s)\big] = 0.
+\end{equation}
+Worker returns are
+\begin{equation}\label{eq:Ri_def}
+R_i \;\equiv\; \beta \underbrace{\frac{\theta_i q_i(\theta_i)}{D_i(\theta_i)}}_{H_i(\theta_i)} \Pi_i,
+\qquad 
+\Pi_i \equiv \frac{p_i}{P}f_i(k_i) - z,
+\end{equation}
+where $z$ is the flow value of unemployment. The discount term is
+\begin{equation}\label{eq:Di_def}
+D_i(\theta_i)= r+s_i + (1-\beta_i)q_i(\theta_i)+\beta_i\theta_i q_i(\theta_i).
+\end{equation}
+Relative prices follow from the CES aggregator (with $\rho=1-1/\sigma$):
+\begin{equation}\label{eq:CES_price}
+\frac{p_i}{P} = \left( \frac{Y}{a_i^{1/\rho} Y_i} \right)^{1-\rho}.
+\end{equation}
+Market tightness is characterized by the sectoral tightness condition
+\begin{equation}\label{eq:tightness_cond}
+\frac{P_k k_i}{P}
+= \frac{q_i(\theta_i)(1-\beta_i)}{r+s_i}\;
+  \frac{\Pi_i}{D_i(\theta_i)}, \qquad i\in\{m,s\}.
+\end{equation}
+
+\subsection*{Exogenous Assumptions}\label{app:GE_L_assumptions}
+We impose standard regularity conditions.
+
+\begin{enumerate}[label=\textbf{(A\arabic*)}, leftmargin=2cm]
+\item \label{ass:DMP} \textbf{Search:} $q_i(\theta)>0$ and $q_i'(\theta)<0$ for all relevant $\theta$, and $r+s_i>0$.
+\item \label{ass:CES} \textbf{Production and CES:} $f_i'(k)>0$, $f_i''(k)<0$. The final good aggregator has elasticity of substitution $\sigma\in(0,\infty)$, so $\rho<1$.
+\end{enumerate}
+
+\subsection*{A.3 Lemmas}
+
+\begin{lemma}[CES Derivatives]\label{lem:CES_derivs}
+Let $\omega_i \equiv \frac{p_i Y_i}{P Y}$ denote the expenditure share. Under \eqref{eq:CES_price}, the elasticities of real prices with respect to sectoral outputs satisfy
+\[
+\frac{\partial \ln (p_i/P)}{\partial \ln Y_j} = (1-\rho)(\omega_j - \delta_{ij}),
+\]
+where $\delta_{ij}$ is the Kronecker delta ($\delta_{ij}=1$ if $i=j$ and $0$ otherwise).
+\end{lemma}
+
+\begin{proof}
+Taking logs of \eqref{eq:CES_price} gives $\ln(p_i/P)=(1-\rho)(\ln Y-\ln Y_i)+\text{const.}$ Differentiating with respect to $\ln Y_j$ yields
+\[
+\frac{\partial \ln (p_i/P)}{\partial \ln Y_j}
+=(1-\rho)\left(\frac{\partial \ln Y}{\partial \ln Y_j}-\delta_{ij}\right).
+\]
+Finally, $\partial \ln Y/\partial \ln Y_j=\omega_j$ follows from $\omega_j=(p_j/P)(Y_j/Y)$ and the final-good first-order condition $p_j/P=\partial Y/\partial Y_j$, which implies $\omega_j=(Y_j/Y)\,\partial Y/\partial Y_j=\partial \ln Y/\partial \ln Y_j$.
+\end{proof}
+
+\begin{lemma}[Return Monotonicity under the Tightness Condition]\label{lem:Psi_pos}
+Under \eqref{eq:tightness_cond} and \textbf{(A1)}, worker return is strictly increasing in match surplus:
+\[
+\Psi_i \;\equiv\; \frac{dR_i}{d\Pi_i} \;>\; 0.
+\]
+\end{lemma}
+
+\begin{proof}
+By the chain rule, $\Psi_i=(dR_i/d\theta_i)/(d\Pi_i/d\theta_i)$. The tightness condition \eqref{eq:tightness_cond} implies
+\[
+\frac{\Pi_i}{D_i(\theta_i)}
+=\frac{P_k k_i}{P}\cdot\frac{r+s_i}{(1-\beta_i)q_i(\theta_i)}.
+\]
+Substituting into \eqref{eq:Ri_def} gives
+\[
+R_i=\beta\,\theta_i q_i(\theta_i)\cdot\frac{\Pi_i}{D_i(\theta_i)}
+=\beta\,\frac{P_k k_i}{P}\cdot\frac{r+s_i}{1-\beta_i}\,\theta_i,
+\]
+so $dR_i/d\theta_i>0$. Rearranging \eqref{eq:tightness_cond} also yields
+\[
+\Pi_i(\theta_i)
+=\frac{P_k k_i}{P}\cdot\frac{r+s_i}{1-\beta_i}\,\frac{D_i(\theta_i)}{q_i(\theta_i)}.
+\]
+Differentiating and using \eqref{eq:Di_def} implies
+\[
+\frac{d\Pi_i}{d\theta_i}
+=\frac{P_k k_i}{P}\cdot\frac{r+s_i}{1-\beta_i}\,
+\frac{\beta_i q_i(\theta_i)^2-(r+s_i)q_i'(\theta_i)}{q_i(\theta_i)^2}>0,
+\]
+since $q_i(\theta_i)>0$, $q_i'(\theta_i)<0$, and $r+s_i>0$. Hence $\Psi_i>0$.
+\end{proof}
+
+\subsection*{A.4 Derivation of the Labor Response}\label{app:GE_L_deriv}
+
+Applying the Implicit Function Theorem to \eqref{eq:SC_exact} yields
+\begin{equation}\label{eq:IFT_master}
+\frac{dL_s}{dk_m}
+= - \frac{\partial F / \partial k_m}{\partial F / \partial L_s}
+= - \frac{\frac{\partial (R_m - R_s)}{\partial k_m}}{\frac{\partial (R_m - R_s)}{\partial L_s}}.
+\end{equation}
+
+\noindent\textbf{1. The Stability Term (Denominator).}
+We show that
+\begin{equation}\label{eq:denom_goal}
+\frac{\partial (R_m-R_s)}{\partial L_s} > 0 .
+\end{equation}
+Differentiating $R_i=\beta H_i(\theta_i)\Pi_i$ with respect to $L_s$ (holding $(k_m,k_s)$ fixed) gives
+\begin{equation}\label{eq:dRi_dLs_explicit}
+\frac{\partial R_i}{\partial L_s}
+=\beta\left[\Pi_i H_i'(\theta_i)\frac{\partial \theta_i}{\partial L_s}
++H_i(\theta_i)\frac{\partial \Pi_i}{\partial L_s}\right].
+\end{equation}
+Since $\Pi_i=\frac{p_i}{P}f_i(k_i)-z$, holding $(k_i,z)$ fixed implies
+\begin{equation}\label{eq:dPi_dLs}
+\frac{\partial \Pi_i}{\partial L_s}=f_i(k_i)\frac{\partial (p_i/P)}{\partial L_s}.
+\end{equation}
+The tightness condition \eqref{eq:tightness_cond} induces an equilibrium mapping $\theta_i=\Theta_i(\Pi_i)$ for fixed $(k_i,P_k/P)$, so \eqref{eq:dRi_dLs_explicit} can be written along this locus as
+\begin{equation}\label{eq:dRi_dLs_packaged}
+\frac{\partial R_i}{\partial L_s}
+=\frac{dR_i}{d\Pi_i}\frac{\partial \Pi_i}{\partial L_s}
+\equiv \Psi_i\,\frac{\partial \Pi_i}{\partial L_s}.
+\end{equation}
+By Lemma \ref{lem:Psi_pos}, $\Psi_i>0$.
+
+Under the resource constraint $L_m=\bar L-L_s$, an increase in $L_s$ raises $Y_s$ and lowers $Y_m$. Lemma \ref{lem:CES_derivs} therefore implies
+\[
+\frac{\partial (p_s/P)}{\partial L_s}<0,
+\qquad
+\frac{\partial (p_m/P)}{\partial L_s}>0,
+\]
+and hence, by \eqref{eq:dPi_dLs},
+\[
+\frac{\partial \Pi_s}{\partial L_s}<0,
+\qquad
+\frac{\partial \Pi_m}{\partial L_s}>0.
+\]
+Combining these inequalities with \eqref{eq:dRi_dLs_packaged} and $\Psi_i>0$ yields
+\[
+\frac{\partial R_s}{\partial L_s}<0,
+\qquad
+\frac{\partial R_m}{\partial L_s}>0,
+\]
+which in turn implies \eqref{eq:denom_goal}:
+\[
+\frac{\partial (R_m-R_s)}{\partial L_s}
+=\frac{\partial R_m}{\partial L_s}-\frac{\partial R_s}{\partial L_s}
+>0.
+\]
+
+\vspace{0.3cm}
+
+% ============================================================
+% A.4.2 Numerator and analytical condition for positivity
+% (drop this directly after the denominator subsection)
+% ============================================================
+
+\subsubsection*{A.4.2 The capital-response term (numerator)}
+Holding $(L_s,k_s)$ fixed, the numerator in \eqref{eq:IFT_master} is
+\begin{equation}\label{eq:numer_def}
+\frac{\partial (R_m-R_s)}{\partial k_m}
+=\frac{\partial R_m}{\partial k_m}-\frac{\partial R_s}{\partial k_m}.
+\end{equation}
+Using \eqref{eq:Ri_def}, $R_i=\beta H_i(\theta_i)\Pi_i$ with
+$H_i(\theta_i)=\theta_i q_i(\theta_i)/D_i(\theta_i)$ and
+$\Pi_i=(p_i/P)f_i(k_i)-z$, the product and chain rules imply, for each
+$i\in\{m,s\}$,
+\begin{equation}\label{eq:dRi_dkm_general}
+\frac{\partial R_i}{\partial k_m}
+=\beta\left[
+H_i(\theta_i)\frac{\partial \Pi_i}{\partial k_m}
++\Pi_i\,H_i'(\theta_i)\frac{\partial \theta_i}{\partial k_m}
+\right].
+\end{equation}
+Substituting \eqref{eq:dRi_dkm_general} into \eqref{eq:numer_def} yields
+\begin{equation}\label{eq:numer_expanded}
+\frac{\partial (R_m-R_s)}{\partial k_m}
+=\beta\Bigg(
+H_m\,\frac{\partial \Pi_m}{\partial k_m}
++\Pi_m H_m'\,\frac{\partial \theta_m}{\partial k_m}
+-
+H_s\,\frac{\partial \Pi_s}{\partial k_m}
+-\Pi_s H_s'\,\frac{\partial \theta_s}{\partial k_m}
+\Bigg).
+\end{equation}
+
+\textbf{Derivation of $\frac{\partial \Pi_m}{\partial k_m}$}
+
+Recall
+\[
+\Pi_i \equiv \frac{p_i}{P}f_i(k_i)-z,\qquad i\in\{m,s\}.
+\]
+Holding $(L_s,k_s)$ fixed, we have
+\begin{align}
+\frac{\partial \Pi_m}{\partial k_m}
+&=
+\frac{p_m}{P}\,f_m'(k_m)
++f_m(k_m)\,\frac{\partial}{\partial k_m}\!\left(\frac{p_m}{P}\right),
+\label{eq:dPim_dkm}\\[0.4em]
+\frac{\partial \Pi_s}{\partial k_m}
+&=
+f_s(k_s)\,\frac{\partial}{\partial k_m}\!\left(\frac{p_s}{P}\right),
+\label{eq:dPis_dkm}
+\end{align}
+where the direct term in $f_s$ is zero because $k_s$ is held fixed.
+
+\medskip
+
+To express the price derivatives, use Lemma~\ref{lem:CES_derivs}:
+\[
+\frac{\partial \ln (p_i/P)}{\partial \ln Y_j}=(1-\rho)(\omega_j-\delta_{ij}),
+\qquad \omega_j\equiv \frac{p_jY_j}{PY}.
+\]
+By the chain rule,
+\[
+\frac{\partial}{\partial k_m}\!\left(\frac{p_i}{P}\right)
+=\frac{p_i}{P}\sum_{j\in\{m,s\}}\frac{\partial \ln (p_i/P)}{\partial \ln Y_j}\,
+\frac{1}{Y_j}\frac{\partial Y_j}{\partial k_m}.
+\]
+Specializing to two sectors and simplifying gives
+\begin{align}
+\frac{\partial}{\partial k_m}\!\left(\frac{p_m}{P}\right)
+&=\frac{p_m}{P}(1-\rho)\Bigg[
+-(1-\omega_m)\frac{1}{Y_m}\frac{\partial Y_m}{\partial k_m}
++(1-\omega_m)\frac{1}{Y_s}\frac{\partial Y_s}{\partial k_m}
+\Bigg],
+\label{eq:dpmoPk}\\[0.4em]
+\frac{\partial}{\partial k_m}\!\left(\frac{p_s}{P}\right)
+&=\frac{p_s}{P}(1-\rho)\omega_m\Bigg[
+\frac{1}{Y_m}\frac{\partial Y_m}{\partial k_m}
+-\frac{1}{Y_s}\frac{\partial Y_s}{\partial k_m}
+\Bigg].
+\label{eq:dpsdPk}
+\end{align}
+
+Substituting \eqref{eq:dpmoPk} into \eqref{eq:dPim_dkm} and \eqref{eq:dpsdPk} into \eqref{eq:dPis_dkm} yields
+\begin{align}
+\frac{\partial \Pi_m}{\partial k_m}
+&=
+\frac{p_m}{P}f_m'(k_m)
++\frac{p_m}{P}f_m(k_m)(1-\rho)\Bigg[
+-(1-\omega_m)\frac{1}{Y_m}\frac{\partial Y_m}{\partial k_m}
++(1-\omega_m)\frac{1}{Y_s}\frac{\partial Y_s}{\partial k_m}
+\Bigg],
+\label{eq:dPim_dkm_closed}\\[0.6em]
+\frac{\partial \Pi_s}{\partial k_m}
+&=
+\frac{p_s}{P}f_s(k_s)(1-\rho)\omega_m\Bigg[
+\frac{1}{Y_m}\frac{\partial Y_m}{\partial k_m}
+-\frac{1}{Y_s}\frac{\partial Y_s}{\partial k_m}
+\Bigg].
+\label{eq:dPis_dkm_closed}
+\end{align}
+
+\textbf{Derivation of $\frac{\partial \theta_i}{\partial k_m}$}
+This one is very complicated...
+\end{document}

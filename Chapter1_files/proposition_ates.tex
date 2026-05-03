@@ -1,0 +1,146 @@
+\documentclass[12pt]{article} %V1.0
+\usepackage{amsfonts,amssymb,amsmath,mathrsfs,amsthm}
+\usepackage{graphicx,caption,lipsum}
+\usepackage{epsfig,epstopdf}
+\usepackage{nccmath}
+%\usepackage{harvard}
+
+%\usepackage[margin=2cm]{geometry}
+\usepackage[bottom=1in,top=1in,left=1in,right=1in]{geometry}
+\setlength{\parindent}{0cm}
+
+%\setlength{\leftmargini}{16pt}
+
+\usepackage[dvipsnames]{xcolor} % en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage{enumitem} % bullet points
+\usepackage{cmap} % fix the 'fi' problem
+\usepackage{rotating,wrapfig,lscape}
+\usepackage{bbm}
+\usepackage{mathtools} % for multi-lined equations
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage[export]{adjustbox}
+\usepackage{setspace}
+
+\onehalfspacing
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}
+ 
+
+\linespread{1.25}
+\setlength{\parindent}{24pt}
+
+
+
+% HYPERLINK
+\usepackage[breaklinks=true]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  citecolor=darkblue,
+  linkcolor=darkblue,
+  urlcolor=darkblue,
+  pdfpagemode=none,
+  pdfstartview={XYZ null null 1},
+  pdftitle={},
+  pdfauthor={GH},
+  pdfkeywords={} }
+\definecolor{darkblue}{rgb}{0,0,0.25}
+%
+
+% BIBLIOGRAPHY
+\usepackage[longnamesfirst]{natbib}
+\bibliographystyle{chicago}
+%\bibliographystyle{econometrica}
+
+% DEFINITIONS
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}%[section]
+
+\captionsetup[figure]{labelsep=period}
+
+\usepackage{palatino}
+
+\setlength{\footnotesep}{1em}
+
+\usepackage{nameref}
+
+\graphicspath{{./figs181014/}}
+%---------------------------------------------------------------------------------
+
+\begin{document}
+\subsection{The Social Planner's Allocation} \label{section planner}
+
+Having showed that Intervention 4 (type-0 bias) yields sizeable welfare gains, it is natural to ask how close it brings the economy to its efficient level.
+However, given the non-standard features of our model, characterizing this ``efficient level'' is not obvious.
+The most straightforward way to go about describing the efficient allocation is to repeat the ``textbook" exercise (i.e., Chapter 8 of \citealt{pissarides2000equilibrium}), where the social planner chooses the aggregate measure of vacancies, while being constrained by the matching technology, which in our case is the \cite{petrongolo2001looking} matching with ranking. Importantly, however, the ranking the planner is subject to ought to be \textit{aligned} with the ranking described under Intervention 4, since this is the spirit of our exercise.\footnote{\,Studying the problem of a planner who is subject to a different ranking of worker types (say, the one described in the baseline model) would imply that the planner does not have the tools to address the main inefficiency in the model, i.e., the fact that firms do not internalize the social benefit of hiring inexperienced workers. Since the goal of this section is to see how close Intervention 4 brings the economy to the constrained efficient allocation, making sure that the two specifications share the same ranking is the only meaningful way to carry out this comparison.} The social planner's problem and its solution are formally presented in the following proposition. 
+
+\begin{proposition}\label{prop SSPP}
+\indent The social planner solves the following problem: 
+\begin{align*}
+   &\max_{v}
+   \begin{aligned}[t]
+      &\int_{0}^{\infty} e^{-rt}[e_0(p-k) + e_1p + \tilde{e}_1(p-\tilde{k}) + \tilde{e}_0(p-k-\tilde{k}) +(u_0 + u_1 + \tilde{u}_1 + \tilde{u}_0)z -cv ] \,dt, 
+   \end{aligned}  \notag \\
+   &\text{subject to} \notag \\
+   &\begin{aligned}
+   \begin{split}
+   & \dot{u}_0 =\delta - u_0(\delta + \gamma + f_0), \\
+   & \dot{u}_1 = \lambda(e_0 + e_1) - (\delta + f_1)u_1, \\
+   & \dot{\tilde{u}}_1=\lambda( \tilde{e}_0 + \tilde{e}_1) - (\delta + \tilde{f}_1)\tilde{u}_1, \\
+   &\dot{\tilde{u}}_0 = \gamma u_0 - (\delta + \tilde{f}_0)\tilde{u}_0, 
+   \end{split}
+   \hspace{2cm}
+   \begin{split}
+   &\dot{e}_0 = f_0u_0 - (\delta + \lambda)e_0, \\
+   &\dot{e}_1 = f_1u_1 - (\delta + \lambda)e_1, \\
+   &\dot{\tilde{e}}_0=\tilde{f}_0\tilde{u}_0 - (\delta + \lambda)\tilde{e}_0, \\
+   &\dot{\tilde{e}}_1=\tilde{f}_1\tilde{u}_1 - (\delta + \lambda)\tilde{e}_1, 
+   \end{split}
+   \end{aligned}
+   \end{align*}
+\noindent {where}
+      \begin{align*}
+   &f_0=b_0^{a-1}, \\
+   &f_1=\frac{(b_0 + b_1)^a - b_0^a}{b_1}, \\
+   &\tilde{f}_1=\frac{(b_0 + b_1 +\tilde{b}_1)^a - (b_0+b_1)^a}{\tilde{b}_1}, \\
+   &\tilde{f}_0=\frac{(b_0 + b_1 + \tilde{b}_1 + \tilde{b}_1)^a - (b_0 + b_1 + \tilde{b}_1)^a}{\tilde{b}_0}.
+\end{align*}
+The steady state solution to the planner's problem is summarized by unemployment levels for each type ($u_0$,$u_1$,$\tilde{u}_0$,$\tilde{u}_1$), employment levels for each type ($e_0$,$e_1$,$\tilde{e}_0$,$\tilde{e}_1$), and a measure of vacancies $v$. Moreover, the planner's solution is uniquely determined by the eight Beveridge curves reported at the end of Section \ref{section beveridge}, where the arrival rates are stated as above, and an equation that governs the optimal level of vacancies: 
+\begin{equation}
+q_0(\mu_{e_0}-\mu_{u_0}) + \tilde{q}_0(\mu_{\tilde{e}_0}-\mu_{\tilde{u}_0}) +q_1(\mu_{e_1}-\mu_{u_1})+\tilde{q}_1(\mu_{\tilde{e}_1}-\mu_{\tilde{u}_1}) = \frac{c}{1-a}e^{-rt}.\label{eq_planner}
+\end{equation}
+The various $q$ terms are the arrival rates of specific types of workers to a firm:\begin{align*}
+   &q_0=b_0^{a}, \\
+   &q_1=(b_0 + b_1)^a - b_0^a, \\
+   &\tilde{q}_1=(b_0 + b_1 +\tilde{b}_1)^a - (b_0+b_1)^a, \\
+   &\tilde{q}_0=(b_0 + b_1 + \tilde{b}_1 + \tilde{b}_1)^a - (b_0 + b_1 + \tilde{b}_1)^a.
+\end{align*}
+Derivations of the above arrival rates of workers are identical to the ones provided in \ref{section appendix proofs}, with the only difference coming from the new ranking. Likewise, the various $\mu$ terms are the co-state variables in the social planner's problem, and the differentials $(\mu_{e_0}-\mu_{u_0}), (\mu_{\tilde{e}_0}-\mu_{\tilde{u}_0}), (\mu_{e_1}-\mu_{u_1})$, and $(\mu_{\tilde{e}_1}-\mu_{\tilde{u}_1})$ are described in detail in the proof.
+\end{proposition}
+\begin{proof}[Proof of Proposition \ref{prop SSPP}]
+See Appendix \ref{section appendix SSPP}
+\end{proof}
+Inspection of Proposition \ref{prop SSPP} reveals that the social planner chooses the number of vacancies to maximize social welfare, defined as the production appropriately weighed by the measure of each employed type, plus enjoyment of leisure by all unemployed types, net of vacancy costs. The first eight constraints indicate that the planner must respect the laws of motion of the measures of the various worker types. The four latter constraints ensure that the 
+%planner understands that the 
+job finding rates of the four unemployed types are governed by the \cite{petrongolo2001looking} matching process, where, however, the ranking has been tweaked to give priority to type-0 workers (thus matching the ranking of Intervention 4). A natural interpretation of equation (\ref{eq_planner}) follows the equalization of marginal social cost with expected marginal social benefit of the vacancy creation.
+The right hand-side of equation (\ref{eq_planner}) captures the effective discounted marginal cost of creating an additional vacancy.
+The left hand-side of this equation illustrates the expected marginal benefit of creating an additional vacancy. 
+Specifically, the differences of the shadow prices capture the social benefit of a potential transition through a match with the additional vacancy and the terms that multiply those differences, $q_{i}$'s, are the probabilities of such transitions. Therefore, we can inspect left hand side as the expected marginal social benefit as the marginal benefit of the additional vacancy depends on the type of the match.
+
+
+
+The quantitative implications of the planner's allocation are shown in the last column of Table \ref{table_quantitative_results}.
+The main takeaway from these results is that the planner implements what Intervention 4 does: raises the job-finding rate of type-0 workers by an order of magnitude to save their skills from depreciation.
+To make this happen, the planner has to give priority to entrants compared to the other unemployed, something Intervention 4 achieved by compensating firms for ranking type-0 workers above the other unemployed.
+As a result, the job-finding rates of the other worker types are susbtantially lower in the constrained efficient allocation than in the baseline economy.
+Table \ref{table_quantitative_results} demonstrates that Intervention 4 brings the economy particularly close to the constrained efficient outcome. 
+Intuitively, the social planner implements a Hosios-type condition for our environment; however, it becomes apparent that implementing the ``correct'' ranking is an order of magnitude more important than fine-tuning the level of vacancy creation.
+
+
+\end{document}

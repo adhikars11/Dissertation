@@ -1,0 +1,230 @@
+\documentclass[12pt]{article} %V1.0
+\usepackage{amsfonts,amssymb,amsmath,mathrsfs,amsthm}
+\usepackage{graphicx,caption,lipsum}
+\usepackage{epsfig,epstopdf}
+%\usepackage{harvard}
+
+%\usepackage[margin=2cm]{geometry}
+\usepackage[bottom=1in,top=1in,left=1in,right=1in]{geometry}
+\setlength{\parindent}{0cm}
+
+%\setlength{\leftmargini}{16pt}
+
+\usepackage[dvipsnames]{xcolor} % en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage{enumitem} % bullet points
+\usepackage{cmap} % fix the 'fi' problem
+\usepackage{rotating,wrapfig,lscape}
+\usepackage{bbm}
+\usepackage{mathtools} % for multi-lined equations
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage[export]{adjustbox}
+\usepackage{setspace}
+
+\onehalfspacing
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}
+ 
+
+\linespread{1.25}
+\setlength{\parindent}{24pt}
+
+
+
+% HYPERLINK
+\usepackage[breaklinks=true]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  citecolor=darkblue,
+  linkcolor=darkblue,
+  urlcolor=darkblue,
+  pdfpagemode=none,
+  pdfstartview={XYZ null null 1},
+  pdftitle={},
+  pdfauthor={GH},
+  pdfkeywords={} }
+\definecolor{darkblue}{rgb}{0,0,0.25}
+%
+
+% BIBLIOGRAPHY
+\usepackage[longnamesfirst]{natbib}
+\bibliographystyle{chicago}
+%\bibliographystyle{econometrica}
+
+% DEFINITIONS
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}%[section]
+
+\captionsetup[figure]{labelsep=period}
+
+\usepackage{palatino}
+
+\setlength{\footnotesep}{1em}
+
+\usepackage{nameref}
+
+\graphicspath{{./figs181014/}}
+%---------------------------------------------------------------------------------
+
+\begin{document}
+
+\section{Competitive equilibrium is equivalent to Social Planner Problem}\label{intro} 
+
+There is a faster way to derive the competitive search equilibria conditions and to proice this, in the case of submarkets $1, \tilde{1}$, they coincide with the SPP. These notes are not only because they are shorter/more elegant but because by being simpler they maybe useful to studyibg the more comploicated cases for $0, \tilde{0}$ submarkets. 
+
+\subsection{Submarket $1$}
+The objective function is: 
+\begin{eqnarray*}
+&& \max_{b_1,w_1} \quad -c + b_1^a \cdot \frac{p-w_1}{r+\lambda+\delta} \\
+&& \text{s.t.} \quad U_1(r+\delta+f_1) = z + f_1 \frac{w_1+\lambda U_1}{r+\lambda+\delta} \\
+&& \iff U_1 \left[r+\delta+b_1^{a-1}\left(1 - \frac{\lambda}{r+\lambda+\delta}\right)\right] = z + \frac{b_1^{a-1}w_1}{r+\lambda+\delta} \\
+&& \iff (r+\delta) U_1 \left[1 + \frac{b_1^{a-1}}{r+\lambda+\delta}\right] = z + \frac{b_1^{a-1}w_1}{r+\lambda+\delta} \\
+&& \iff (r+\delta) U_1 \left[b_1 + \frac{b_1^{a}}{r+\lambda+\delta}\right] - b_1 z = \frac{b_1^{a}w_1}{r+\lambda+\delta} \\
+\end{eqnarray*}
+This makes our objective function: 
+\begin{equation}
+\max_{b_1} \quad -c +\frac{b_1^a p}{r+\lambda+\delta} + b_1 z - (r+\delta) U_1 \left[b_1 + \frac{b_1^{a}}{r+\lambda+\delta}\right] \label{label01}\tag{\therefore}
+\end{equation}
+Taking FOC w.r.t $b_1$ yields: 
+\begin{eqnarray*}
+&& \frac{a p b_1^{a-1}}{r+\lambda+\delta} + z - (r+\delta) U_1 \left[b_1 + \frac{b_1^{a}}{r+\lambda+\delta}\right] = 0 
+\end{eqnarray*}
+\begin{equation}
+    \implies \frac{a p b_1^{a-1}}{r+\lambda+\delta} \left[p-(r+\delta)U_1\right] = (r+\delta)U_1-z \label{label02}\tag{*}
+\end{equation}
+To find the solution $b_1$ onlt as a function of paramters, we need to go back to the objective function and impose $V_1=0$. We will impose that the 
+\ref{label01} expression is equal to 0, but in that expression, we will replace $(r+\delta)U_1$ from \ref{label02}. To that end, notice that from \ref{label02},
+\begin{eqnarray*}
+    && \implies (r+\delta) U_1 \left[1 + \frac{ab_1^{a-1}}{r+\lambda+\delta}\right] = z + \frac{p a b_1^{a-1}}{r+\lambda+\delta}
+\end{eqnarray*}
+\begin{equation}
+ \implies (r+\delta) U_1 = \frac{(r+\lambda+\delta)z + p a b_1^{a-1}}{r+\lambda+\delta+a b_1^{a-1}} \label{twostar} \tag{**}    
+\end{equation}
+
+We will use this into \ref{label01} and set equal to 0 to get: 
+\begin{eqnarray*}
+&& c = b_1z + \frac{pb_1^a}{r+\lambda+\delta} - b_1 \left(\frac{r+\lambda+\delta+b_1^{a-1}}{r+\lambda+\delta}\right) \frac{(r+\lambda+\delta)z + p a b_1^{a-1}}{r+\lambda+\delta+a b_1^{a-1}} \\ 
+&& \implies c = b_1 z \left[1-\frac{r+\lambda+\delta+b_1^{a-1}}{r+\lambda+\delta+a b_1^{a-1}}\right] + \frac{pb_1^a}{r+\lambda+\delta} \left[1-\frac{(r+\lambda+\delta+b_1^{a-1})a}{r+\lambda+\delta+a b_1^{a-1}}\right] \\
+&& \implies c = b_1z \frac{(1-a)b_1^{a-1}}{r+\lambda+\delta+ab_1^{a-1}} +  \frac{pb_1^a}{r+\lambda+\delta} \frac{(r+\lambda+\delta)(1-a)}{r+\lambda+\delta+a b_1^{a-1}} \\
+&& \implies c = \frac{b_1^a (1-a)(p-z)}{r+\lambda+\delta+a b_1^{a-1}} \\
+&& \implies \frac{(1-a)(p-z)}{c} = (r+\lambda+\delta+a \theta_1^{1-a}) \theta_1^a \quad \because \text{Plugging in} \quad \theta_1 = \frac{1}{b_1} \\
+&& \implies (r+\lambda+\delta)\theta_1^a + a \theta_1 = \frac{(1-a)(p-z)}{c}, \text{which is also the SPP.}
+\end{eqnarray*}
+There is no reason to repeat for the submarket $\tilde{1}$ because everything is isomorphic. But let's see if this slightly simpler strategy can help with the more complicated submarkets $\tilde{0}$ and $0$. Let's start with the easier of the two: $\tilde{0}$.
+\subsection{Submarket $\tilde{0}$}
+The objective function is: 
+\begin{eqnarray*}
+&& \max_{\tilde{b}_0,\tilde{w}_0} \quad -c + \tilde{b}_0^a \cdot \frac{\tilde{p}-\tilde{w}_0}{r+\lambda+\delta} \quad \text{where} \quad \tilde{p}=p-\kappa-\tilde{\kappa}\\
+&& \text{s.t.} \quad \tilde{U}_0(r+\delta+\tilde{b}_0^{a-1}) = z + \tilde{b}_0^{a-1} \frac{\tilde{w}_0+\lambda \tilde{U}_1}{r+\lambda+\delta} \\
+&& \text{i.e.} \quad -\tilde{b}_0 \tilde{U}_0(r+\delta+\tilde{b}_0^{a-1}) + \frac{\tilde{b}_0^{a} \lambda \tilde{U}_1}{r+\lambda+\delta}  = -z\tilde{b}_0 -  \frac{\tilde{b}_0^{a}\tilde{w}_0}{r+\lambda+\delta} 
+\end{eqnarray*}
+This makes our objective function: 
+\begin{equation*}
+\max_{\tilde{b}_0} \quad -c + \frac{\tilde{b}_0^a p}{r+\lambda+\delta} - \tilde{U}_0(\tilde{b}_0(r+
+\delta)+\tilde{b}_0^a) + \frac{\tilde{b}_0^{a} \lambda \tilde{U}_1}{r+\lambda+\delta} +  z\tilde{b}_0
+\end{equation*}
+Taking FOC w.r.t $\tilde{b}_0$ yields: 
+\begin{eqnarray*}
+&& \frac{a \tilde{p} \tilde{b}_0^{a-1}}{r+\lambda+\delta} - (r+\delta) \tilde{U}_0 - \tilde{U}_0 a \tilde{b}_0^{a-1} + \frac{a\tilde{b}_0^{a-1} \lambda \tilde{U}_1}{r+\lambda+\delta}+z= 0 \\
+&& a\tilde{b}_0^{a-1} \left[\frac{\tilde{p}}{r+\lambda+\delta} - \tilde{U}_0 +\frac{\lambda \tilde{U}_1}{r+\lambda+\delta}\right] = (r+\delta)\tilde{U}_0 - z
+\end{eqnarray*}
+\begin{equation}
+ \implies \tilde{U}_0[r+\delta+a\tilde{b}_0^{a-1}] = z + \frac{a \tilde{b}_0^{a-1}}{r+\lambda+\delta}(\tilde{p}+\lambda \tilde{U}_1) \label{label03}\tag{***}
+\end{equation}
+$\tilde{V_0}=0$ says that:
+\begin{equation*}
+ c = \frac{\tilde{p} \tilde{b}_0^{a}}{r+\lambda+\delta} + z \tilde{b}_0 + \frac{\tilde{b}_0^{a}\lambda \tilde{U}_1}{r+\lambda+\delta} -\tilde{b}_0\tilde{U}_0[r+\delta+\tilde{b}_0^{a-1}]
+\end{equation*}
+Plug this to rewrite the last expression in \ref{label03} as: 
+\begin{eqnarray*}
+&& c =  \frac{\tilde{p}\tilde{b}_0^a}{r+\lambda+\delta} + z\tilde{b}_0 + \frac{\tilde{b}_0^a \lambda \tilde{U}_1}{r+\lambda+\delta} - \tilde{b}_0 \cdot (r+\delta+a\tilde{b}_0^{a-1}) \cdot \frac{z + \frac{a \tilde{b}_0^{a-1}}{r+\lambda+\delta} (\tilde{p}+\lambda \tilde{U}_1)}{r+\delta+a\tilde{b}_0^{a-1}}\\ 
+&& =  \frac{\tilde{b}_0^a}{r+\lambda+\delta} (\tilde{p}+\lambda \tilde{U}_1) + z\tilde{b}_0 - \tilde{b}_0 \frac{r+\delta+\tilde{b}_0^{a-1}}{(r+\delta+a\tilde{b}_0^{a-1})}z - \frac{\tilde{b}_0(r+\delta+\tilde{b}_0^{a-1})a\tilde{b}_0^{a-1}(\tilde{p}+\lambda \tilde{U}_1)}{(r+\lambda+\delta)(r+\delta+a\tilde{b}_0^{a-1})} \\ 
+&& = z\tilde{b}_0 \left[1 - \frac{r+\delta+\tilde{b}_0^{a-1}}{r+\delta+a\tilde{b}_0^{a-1}}\right] + \frac{\tilde{b}_0^a(\tilde{p}+\lambda \tilde{U}_1)}{r+\lambda+\delta}\left[1 - \frac{(r+\delta+\tilde{b}_0^{a-1})a}{r+\delta+a\tilde{b}_0^{a-1}}\right] \\ 
+&& = z\tilde{b}_0 \frac{\tilde{b}_0^{a-1}(a-1)}{r+\delta+a\tilde{b}_0^{a-1}} + \frac{\tilde{b}_0^a(\tilde{p}+\lambda \tilde{U}_1)}{r+\lambda+\delta} \cdot \frac{(r+\delta)(1-a)}{r+\delta+a\tilde{b}_0^{a-1}} \\
+&& = \frac{\tilde{b}_0^{a}(1-a)}{r+\delta+a\tilde{b}_0^{a-1}} \left[ \frac{(\tilde{p}+\lambda \tilde{U}_1)(r+\delta)}{r+\lambda+\delta} - z \right]
+\end{eqnarray*}
+Plug in $\tilde{\theta}_0 = \frac{1}{\tilde{b}_0}$:
+\begin{eqnarray*}
+&& (r+\delta+a\tilde{\theta}_0^{1-a})(r+\lambda+\delta)\tilde{\theta}_0^a = \frac{1-a}{c} [(\tilde{p}+\lambda \tilde{U}_1)(r+\delta) - (r+\delta+\lambda)z] \\
+&& \implies (r+\delta+a\tilde{\theta}_0^{1-a})(r+\lambda+\delta)\tilde{\theta}_0^a = \frac{1-a}{c} [(r+\delta)(\tilde{p}-z) +\lambda ((r+\delta)\tilde{U}_1-z)] 
+\end{eqnarray*}
+Divide by $(r+\delta)$ to get
+\begin{eqnarray*}
+&& (1+\frac{a\tilde{\theta}_0^{1-a}}{r+\delta})(r+\delta+\lambda)\tilde{\theta}_0^a = \frac{(1-a)(\tilde{p}-z)}{c} + \frac{\lambda(1-a)}{(r+\delta)c}[(r+\delta)\tilde{U}_1-z] \\
+&&(r+\delta+\lambda) \underset{\checkmark}{\tilde{\theta}_0^a} + a \underset{\checkmark}{\tilde{\theta_0}} + \frac{a\lambda}{r+\delta} \underset{\checkmark}{\tilde{\theta_0}} - \frac{\lambda(1-a)}{c(r+\delta)}[(r+\delta)\tilde{U}_1 - z] = \underset{\checkmark}{\frac{(1-a)(p - \kappa - \tilde{\kappa} - z)}{c}}
+\end{eqnarray*}
+Here, all the terms with checked terms are identical to SPP. TO finish the proof, we need to show that the unchecked term becomes: $\frac{\lambda a}{r+\delta} \tilde{\theta}_1.$ To prove that we can write an equation similar to \ref{label02} for submarket $\tilde{1}$, which is isomorphic:
+\begin{eqnarray*}
+&& (r+\delta) \tilde{U}_1 = \frac{(r+\lambda+\delta+a \tilde{b}_1^{a-1})z + a \tilde{b}_1^{a-1}(p-\tilde{\kappa}-z)}{r+\lambda+\delta+a \tilde{b}_1^{a-1}} \\
+&& (r+\delta) \tilde{U}_1 - z = \frac{a \tilde{b}_1^{a-1}(p-\tilde{\kappa}-z)}{r+\lambda+\delta+a \tilde{b}_1^{a-1}} = \frac{a}{(1-a)\tilde{b_1}} \frac{\tilde{b}_1^{a}(1-a)(p-\tilde{\kappa}-z)}{r+\lambda+\delta+a \tilde{b}_1^{a-1}} \\
+&& (r+\delta) \tilde{U}_1 - z = \frac{a}{a-1}\tilde{\theta}_1 \cdot c
+\end{eqnarray*}
+Plug this into the above unchecked terms to get: 
+$$\frac{\lambda(1-a)}{c(r+\delta)}[(r+\delta)\tilde{U}_1 - z]=\frac{\lambda(1-a)}{c(r+\delta)}\frac{a \tilde{\theta}_1c}{(1-a)}=\frac{\lambda a}{r+\delta}\tilde{\theta_1}, \quad \text{which concludes the proof.}$$
+\subsection{Submarket $0$}
+The objective function is: 
+\begin{eqnarray*}
+&& \max_{b_0,w_0} \quad -c + b_0^a \cdot \frac{p-\kappa-w_0}{r+\lambda+\delta} \\
+&& \text{s.t.} \quad U_0(r+\delta+\gamma+b_0^{a-1}) = z + b_0^{a-1} \frac{w_0+\lambda U_1}{r+\lambda+\delta} + \gamma \tilde{U_0} \\
+&& \text{i.e.} \quad b_0 U_0(r+\delta+\gamma+b_0^{a-1})  = zb_0 + + \frac{b_0^{a} \lambda U_1}{r+\lambda+\delta} +  \gamma b_0 \tilde{U_0} + \frac{b_0^{a}w_0}{r+\lambda+\delta}  \\
+&& \text{i.e.} - \frac{b_0^{a}w_0}{r+\lambda+\delta} = - b_0 U_0(r+\delta+\gamma+b_0^{a-1}) + zb_0 +  \frac{b_0^{a} \lambda U_1}{r+\lambda+\delta} +  \gamma b_0 \tilde{U_0}   
+\end{eqnarray*}
+This makes our objective function: 
+\begin{equation*}
+\max_{b_0} \quad -c + b_0^a \frac{p-\kappa}{r+\lambda+\delta} - U_0(b_0(r+
+\delta)+b_0^a) +  zb_0 +b_0^a \frac{\lambda U_1}{r+\lambda+\delta} + \gamma b_0 \tilde{U}_0
+\end{equation*}
+Taking FOC w.r.t $\tilde{b}_0$ yields: 
+\begin{eqnarray*}
+&& a b_0^{a-1}\frac{p-\kappa}{r+\lambda+\delta} - (r+\delta+\gamma) U_0 - a b_0^{a-1}U_0 + z + \gamma \tilde{U_0} + ab_0^{a-1} \frac{\lambda U_1}{r+\lambda+\delta} = 0 \\
+&& \implies U_0[r+\delta+\gamma+ab_0^{a-1}] = z + \gamma \tilde{U_0} + \frac{a b_0^{a-1}}{r+\lambda+\delta}(p-\kappa+\lambda U_1)
+\end{eqnarray*}
+$\tilde{V_0}=0$ says that:
+\begin{equation*}
+ c =  b_0^{a} \frac{p-\kappa}{r+\lambda+\delta} + z b_0 + \gamma b_0 \tilde{U_0} + \frac{b_0^{a}\lambda U_1}{r+\lambda+\delta} -b_0[r+\delta+\gamma+b_0^{a-1}] \frac{z+\gamma \tilde{U_0} + \frac{ab_0^{a-1}(p-\kappa+\lambda U_1)}{r+\lambda+\delta}}{r+\delta+\gamma+ab_0^{a-1}}
+\end{equation*}
+Plug this to rewrite the first order condition gives: 
+\begin{eqnarray*}
+&& c =  \frac{b_0^a(p-\kappa+\lambda U_1)}{r+\lambda+\delta} + {b}_0 (z+\gamma \tilde{U_0}) - \frac{b_0(r+\delta+\gamma+b_0^{a-1})(z+\gamma \tilde{U_0})}{r+\delta+\gamma+ab_0^{a-1}} \\
+&&- \frac{ab_0^a (r+\delta+\gamma+b_0^{a-1})(p-\kappa+\lambda U_1)}{({r+\lambda+\delta})(r+\delta+\gamma+ab_0^{a-1})} \\
+&& \implies c =  \frac{b_0^a(p-\kappa+\lambda U_1)}{r+\lambda+\delta} \left[1 - \frac{a(r+\delta+\gamma+b_0^{a-1})}{r+\delta+\gamma+ab_0^{a-1}}\right]+ {b}_0 (z+\gamma \tilde{U_0}) \left[1 - \frac{r+\delta+\gamma+b_0^{a-1}}{r+\delta+\gamma+ab_0^{a-1}}\right] \\
+&& \implies c =  \frac{b_0^a(p-\kappa+\lambda U_1)}{r+\lambda+\delta} \frac{(1-a)(r+\delta+\gamma)}{r+\delta+\gamma+ab_0^{a-1}} - \frac{{b}_0 (z+\gamma \tilde{U_0})(1-a)b_0^{a-1}}{r+\delta+\gamma+ab_0^{a-1}}
+\end{eqnarray*}
+\begin{equation}
+\implies c =  \frac{b_0^a(1-a)}{r+\delta+\gamma+ab_0^{a-1}}\left[\frac{r+\delta+\gamma}{r+\delta+\lambda}(p-\kappa+\lambda U_1) - (z+\gamma \tilde{U_0}) \right] \label{eq0} \tag{EQ0}    
+\end{equation}
+Before we proceed, remember the following useful relationships: 
+\begin{eqnarray*}
+&& (r+\delta)\tilde{U}_1-z = \frac{a \tilde{\theta}_1c}{1-a} \\
+&& (r+\delta)U_1-z = \frac{a \theta_1c}{1-a} \\
+&& (r+\delta)\tilde{U}_0-z = \frac{a \tilde{\theta}_0c}{1-a} 
+\end{eqnarray*}
+Plug in $\theta_0 = \frac{1}{b_0}$ along with the above equations to get:
+\begin{eqnarray*}
+&& (r+\delta+\gamma+a\theta_0^{1-a})\theta_0^a(r+\delta+\lambda) = \frac{1-a}{c} [(r+\delta+\gamma)(p-\kappa+\lambda U_1) - (r+\delta+\lambda)(z+\gamma \tilde{U}_0)]
+\end{eqnarray*}
+Divide by $(r+\delta+\gamma)$ to get
+\begin{align*}
+& \left(1+\frac{a\theta_0^{1-a}}{r+\delta+\gamma}\right)(r+\delta+\lambda)\theta_0^a = \frac{1-a}{c} \left[p-\kappa+\lambda U_1 
+ - \frac{r+\delta+\lambda}{r+\delta+\gamma}(z+\gamma \tilde{U_0}) \right] \\
+&\implies (r+\delta+\lambda) \theta_0^a + \frac{r+\delta+\lambda}{r+\delta+\gamma} a \theta_0 = \frac{1-a}{c} \left[p - \kappa + \lambda \left( \frac{z}{r+\delta} + \frac{a \theta_1 c}{(1-a)(r+\delta)} \right) - \frac{r+\delta+\lambda}{r+\delta+\gamma} z \right. \\
+& \left. \quad - \frac{r+\delta+\lambda}{r+\delta+\gamma} \gamma \left( \frac{z}{r+\delta} + \frac{a \tilde{\theta}_0 c}{(1-a)(r+\delta)} \right) \right] \\
+&\implies \theta_0^a (r+\delta+\lambda) + \frac{r+\delta+\lambda}{r+\delta+\gamma} a \theta_0 = \frac{1-a}{c} [p - \kappa - z] + \frac{1-a}{c} \frac{\lambda a \theta_1 c}{(1-a)(r+\delta)} \\
+& - \frac{1-a}{c}\frac{(r+\delta+\lambda)\gamma}{r+\delta+\gamma} \frac{a \tilde{\theta_0}c}{(1-a)(r+\delta)}\\
+& \implies (r+\delta+\lambda) \underset{\checkmark}{\theta_0^a} + \frac{r+\delta+\lambda}{r+\delta+\gamma} a \theta_0 - \underset{\checkmark}{\frac{\lambda a}{r+\delta}\theta_1} + \underset{\checkmark}{\frac{a\gamma(r+\delta+\lambda)}{(r+\delta)(r+\delta+\gamma)}\tilde{\theta}_0} = \underset{\checkmark}{\frac{(1-a)(p-\kappa-z)}{c}}
+\end{align*}
+
+Here, all the terms with checked terms are identical to SPP. To finish the proof, it suffices to show that the multiplier of $\theta_0$ in the above equation coincides with the multiplier of $\theta_0$ in SPP solution. Here, the multiplier of $\theta_0$ in the SPP solution is: 
+\begin{eqnarray*}
+&& a + \frac{a\lambda}{r+\delta} - \frac{a\gamma(r+\delta+\lambda)}{(r+\delta)(r+\delta+\gamma)} = \frac{a}{r+\delta} \left(r+\delta+\lambda-\frac{\gamma(r+\delta+\lambda)}{r+\delta+\gamma} \right) \\
+&& = \frac{(r+\delta+\lambda)a}{r+\delta}\left(1-\frac{\lambda}{r+\delta+\gamma}\right) = \frac{(r+\delta+\lambda)a}{r+\delta}\frac{r+\delta}{r+\delta+\gamma} \\
+&& = \frac{a(r+\delta+\lambda)}{r+\delta+\gamma}, 
+\end{eqnarray*}
+which is indeed the multiplier of $\theta_0$ is the  expression in our above equation. This concludes the proof.  
+\end{document}

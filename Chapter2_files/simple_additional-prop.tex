@@ -1,0 +1,281 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts,amssymb,amsmath,amsthm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[bottom=1in,top=1in,left=1in,right=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[breaklinks=true]{hyperref}
+
+\definecolor{darkblue}{rgb}{0,0,0.25}
+\hypersetup{colorlinks=true,citecolor=blue,linkcolor=darkblue,urlcolor=darkblue,pdfpagemode=none}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{assumption}{Assumption}
+
+\begin{document}
+
+\section*{Appendix: Capital Wedge and the Induced Labor Wedge}
+
+This appendix proves two claims in the weak two-sector environment with exogenous prices:
+(i) manufacturing capital is inefficiently low in the decentralized equilibrium (DE) relative to the social planner (SP), and
+(ii) this capital wedge implies a labor wedge.
+
+%============================================================
+% A. Environment
+%============================================================
+
+\subsection*{A. Environment}
+
+There are two sectors: manufacturing ($m$) and services ($s$). Relative prices $(p_m/P,p_s/P)$ are treated as exogenous.
+
+\paragraph{Services.}
+Services are competitive and use labor only:
+\[
+Y_s = F_s(L_s), \qquad F_s'(L_s)>0,\quad F_s''(L_s)<0, \quad k_s\equiv 0.
+\]
+The service wage equals marginal product:
+\begin{equation}\label{eq:ws}
+w_s(L_s)=\frac{p_s}{P}F_s'(L_s),\qquad w_s'(L_s)=\frac{p_s}{P}F_s''(L_s)<0.
+\end{equation}
+
+\paragraph{Manufacturing.}
+Manufacturing features search frictions and noncontractible capital. Per-match output is $f_m(k)$ with
+\[
+f_m'(k)>0,\qquad f_m''(k)<0.
+\]
+Let $\theta$ denote labor-market tightness and $q(\theta)$ the vacancy-filling rate, with
+\[
+q(\theta)>0,\qquad q'(\theta)<0,\qquad r+s_m>0.
+\]
+Let $z$ denote the unemployed flow payoff in manufacturing. Let $\beta\in(0,1)$ and impose Hosios $\beta=\eta$.
+
+Define match surplus and the discount term:
+\begin{equation}\label{eq:PiD}
+\Pi_m(k)\equiv \frac{p_m}{P}f_m(k)-z,\qquad
+D_m(\theta)\equiv r+s_m+(1-\beta)q(\theta)+\beta\,\theta q(\theta).
+\end{equation}
+
+%============================================================
+% B. Equilibrium conditions and common locus
+%============================================================
+
+\subsection*{B. Manufacturing conditions and the common tightness locus}
+
+The manufacturing DE satisfies the capital Euler equation and the free-entry (tightness) condition:
+\begin{align}
+P_k
+&=
+\frac{q(\theta_m)(1-\beta)}{r+s_m}\,
+\frac{\frac{p_m}{P}f_m'(k_m)}{r+s_m+(1-\beta)q(\theta_m)},
+\label{eq:DE_cap}\\
+\frac{P_k k_m}{P}
+&=
+\frac{q(\theta_m)(1-\beta)}{r+s_m}\,
+\frac{\Pi_m(k_m)}{D_m(\theta_m)}.
+\label{eq:tight}
+\end{align}
+The planner's manufacturing capital Euler equation is
+\begin{equation}\label{eq:SP_cap}
+P_k
+=
+\frac{q(\theta_m)}{r+s_m}\,
+\frac{\frac{p_m}{P}f_m'(k_m)}{r+s_m+q(\theta_m)}.
+\end{equation}
+
+Under CRS matching and free entry, Hosios implies the planner and DE share the same tightness condition \eqref{eq:tight}. Hence both allocations lie on the common tightness locus:
+\begin{equation}\label{eq:common_locus}
+\frac{P_k k_m}{P}
+=
+\frac{q(\theta_m)(1-\beta)}{r+s_m}\,
+\frac{\Pi_m(k_m)}{D_m(\theta_m)}.
+\end{equation}
+
+%============================================================
+% C. Sectoral indifference
+%============================================================
+
+\subsection*{C. Sectoral choice}
+
+Manufacturing delivers the flow-equivalent return
+\begin{equation}\label{eq:Rm}
+R_m \equiv \beta\,\frac{\theta_m q(\theta_m)}{D_m(\theta_m)}\,\Pi_m(k_m).
+\end{equation}
+An interior allocation is characterized by sectoral indifference and labor feasibility:
+\begin{equation}\label{eq:choice}
+r(\epsilon_m-\epsilon_s)=R_m-w_s(L_s),\qquad L_m=\bar L-L_s.
+\end{equation}
+
+%============================================================
+% D. Capital wedge
+%============================================================
+
+\subsection*{D. Capital wedge: $k_m^{DE}<k_m^{SP}$}
+
+\begin{proposition}[Capital wedge]\label{prop:kwedge}
+Assume $q(\theta)>0$, $q'(\theta)<0$, $f_m'(k)>0$, $f_m''(k)<0$, and impose Hosios $(\beta=\eta)$.
+Define
+\[
+\Gamma^{DE}(\theta)\equiv (1-\beta)\frac{q(\theta)}{r+s_m+(1-\beta)q(\theta)},
+\qquad
+\Gamma^{SP}(\theta)\equiv \frac{q(\theta)}{r+s_m+q(\theta)}.
+\]
+Suppose that, along the relevant branch of the common locus \eqref{eq:common_locus}, the map
+\[
+k\mapsto \frac{\frac{p_m}{P}f_m'(k)}{r+s_m}\Gamma^j(\theta(k)),
+\qquad j\in\{DE,SP\},
+\]
+is strictly decreasing in $k$.\footnote{A sufficient condition is that $\theta'(k)\ge 0$ along the common locus. More generally, the result only requires that any decline in $\theta(k)$ be sufficiently small that the concavity-induced decline in $f_m'(k)$ dominates the induced movement in the search term $\Gamma^j(\theta(k))$. Equivalently, it is enough that
+\[
+|f_m''(k)|\,\Gamma^j(\theta(k))
+>
+f_m'(k)\,|\Gamma_\theta^j(\theta(k))|\,|\theta'(k)|,
+\qquad j\in\{DE,SP\}.
+\]}
+Then,
+\[
+k_m^{DE}<k_m^{SP}.
+\]
+\end{proposition}
+
+\begin{proof}
+The argument follows the first efficiency comparison in Acemoglu and Shimer (1999), adapted to the Hosios case.
+
+Using \eqref{eq:DE_cap} and \eqref{eq:SP_cap}, the DE and planner capital Euler equations can be written as
+\[
+P_k=\frac{\frac{p_m}{P}f_m'(k)}{r+s_m}\Gamma^{DE}(\theta),
+\qquad
+P_k=\frac{\frac{p_m}{P}f_m'(k)}{r+s_m}\Gamma^{SP}(\theta).
+\]
+For any fixed $\theta$ and any $\beta\in(0,1)$,
+\[
+\Gamma^{DE}(\theta)<\Gamma^{SP}(\theta).
+\]
+Indeed, writing $q=q(\theta)>0$,
+\[
+(1-\beta)\frac{q}{r+s_m+(1-\beta)q}
+<
+\frac{q}{r+s_m+q}
+\]
+is equivalent to
+\[
+(1-\beta)(r+s_m+q)<r+s_m+(1-\beta)q,
+\]
+which reduces to
+\[
+(1-\beta)(r+s_m)<r+s_m,
+\]
+true since $\beta\in(0,1)$ and $r+s_m>0$.
+
+Hence, holding $\theta$ fixed,
+\[
+\frac{\frac{p_m}{P}f_m'(k)}{r+s_m}\Gamma^{DE}(\theta)
+<
+\frac{\frac{p_m}{P}f_m'(k)}{r+s_m}\Gamma^{SP}(\theta),
+\]
+so the planner capital-Euler schedule lies strictly above the DE schedule at every common value of $\theta$.
+
+Under Hosios, both allocations satisfy the same tightness condition \eqref{eq:common_locus}, so both are selected along the same common locus. By the maintained monotonicity condition, each capital-Euler right-hand side is strictly decreasing in $k$ along that locus near the interior solution. Since both schedules are set equal to the same constant $P_k$, and the planner schedule is pointwise above the DE schedule, the planner schedule reaches $P_k$ at a strictly larger capital stock. Therefore,
+\[
+k_m^{DE}<k_m^{SP}.
+\]
+\end{proof}
+
+%============================================================
+% E. Labor wedge
+%============================================================
+
+\subsection*{E. Labor wedge induced by the capital wedge}
+
+\begin{assumption}[Monotonicity of manufacturing return on the common locus]\label{ass:returnmono}
+Along the relevant branch of the common locus \eqref{eq:common_locus}, the product $k_m\theta_m$ is locally increasing in $k_m$; equivalently, if $\theta_m=\theta(k_m)$, then
+\[
+\theta(k_m)+k_m\theta'(k_m)>0
+\]
+locally around the interior solution.
+\end{assumption}
+
+\begin{proposition}[Labor wedge]\label{prop:Lwedge}
+Suppose Assumption \ref{ass:returnmono} holds. Then, locally around an interior solution, $L_m$ is increasing in $k_m$. In particular,
+\[
+k_m^{DE}<k_m^{SP}\quad\Longrightarrow\quad L_m^{DE}<L_m^{SP}.
+\]
+\end{proposition}
+
+\begin{proof}
+At an interior allocation, sectoral indifference is given by
+\begin{equation}\label{eq:choice_repeat}
+r(\epsilon_m-\epsilon_s)=R_m-w_s(L_s),
+\end{equation}
+with labor feasibility $L_m=\bar L-L_s$. Differentiating \eqref{eq:choice_repeat} with respect to $k_m$ yields
+\[
+0=R_m'(k_m)-w_s'(L_s)\frac{dL_s}{dk_m},
+\]
+and hence
+\begin{equation}\label{eq:dLsdk}
+\frac{dL_s}{dk_m}=\frac{R_m'(k_m)}{w_s'(L_s)}.
+\end{equation}
+Because services are competitive and $F_s''(L_s)<0$, \eqref{eq:ws} implies
+\[
+w_s'(L_s)=\frac{p_s}{P}F_s''(L_s)<0.
+\]
+Therefore, the sign of $dL_s/dk_m$ is the opposite of the sign of $R_m'(k_m)$.
+
+To sign $R_m'(k_m)$, use the common-locus condition \eqref{eq:common_locus}:
+\[
+\frac{P_k k_m}{P}
+=
+\frac{q(\theta_m)(1-\beta)}{r+s_m}\,
+\frac{\Pi_m(k_m)}{D_m(\theta_m)}.
+\]
+Rearranging gives
+\begin{equation}\label{eq:Pi_over_D_repeat}
+\frac{\Pi_m(k_m)}{D_m(\theta_m)}
+=
+\frac{P_k k_m}{P}\cdot\frac{r+s_m}{(1-\beta)q(\theta_m)}.
+\end{equation}
+Substituting \eqref{eq:Pi_over_D_repeat} into the manufacturing return \eqref{eq:Rm},
+\[
+R_m
+=
+\beta\,\frac{\theta_m q(\theta_m)}{D_m(\theta_m)}\,\Pi_m(k_m),
+\]
+yields
+\begin{equation}\label{eq:Rm_k_theta}
+R_m
+=
+\beta\,\frac{P_k}{P}\cdot\frac{r+s_m}{1-\beta}\,k_m\theta_m.
+\end{equation}
+Thus, along the relevant branch of the common locus (where $\theta_m=\theta(k_m)$),
+\begin{equation}\label{eq:Rprime_explicit}
+R_m'(k_m)
+=
+\beta\,\frac{P_k}{P}\cdot\frac{r+s_m}{1-\beta}\,
+\bigl[\theta(k_m)+k_m\theta'(k_m)\bigr].
+\end{equation}
+The multiplicative factor in \eqref{eq:Rprime_explicit} is strictly positive. By Assumption \ref{ass:returnmono},
+\[
+\theta(k_m)+k_m\theta'(k_m)>0,
+\]
+so \eqref{eq:Rprime_explicit} implies
+\[
+R_m'(k_m)>0.
+\]
+
+Returning to \eqref{eq:dLsdk}, since $R_m'(k_m)>0$ and $w_s'(L_s)<0$, we obtain
+\[
+\frac{dL_s}{dk_m}<0.
+\]
+Using labor feasibility, $L_m=\bar L-L_s$, it follows that
+\[
+\frac{dL_m}{dk_m}=-\frac{dL_s}{dk_m}>0.
+\]
+Hence $L_m$ is locally increasing in $k_m$.
+
+Finally, Proposition \ref{prop:kwedge} established that $k_m^{DE}<k_m^{SP}$. Applying the local monotonicity of $L_m$ in $k_m$ yields
+\[
+L_m^{DE}<L_m^{SP}.
+\]
+\end{proof}
+\end{document}

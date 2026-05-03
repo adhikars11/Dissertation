@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+\usepackage[dvips]{graphicx}
+%\usepackage{achicago,setspace,multirow}
+\usepackage{setspace,palatino,multirow}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{subfig,comment}
+\usepackage{pdflscape}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  citecolor=darkblue,
+  linkcolor=darkblue,
+  pdfpagemode=none,
+  pdfstartview={FitH},
+  pdftitle={},
+  pdfauthor={GHL},
+  pdfkeywords={} }
+\usepackage[longnamesfirst]{natbib}
+\bibliographystyle{chicago}
+
+\special{papersize=8.5in,11in}
+
+\definecolor{darkred}{rgb}{0.66,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.25}
+
+\setlength{\parindent}{0.25in}
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+\textwidth15.75cm
+\evensidemargin5mm
+\oddsidemargin5mm
+\topmargin-15mm
+\textheight 22.7cm
+%\renewcommand{\arraystretch}{1.4}
+\hyphenation{over-lapping}
+
+\renewcommand{\arraystretch}{1.1}
+\usepackage[margin=2cm]{geometry}
+
+\newcounter{saveeqni}%
+\newcounter{saveeqn01i}%
+\newcommand{\alpheqni}{\setcounter{saveeqni}{\value{section}}%
+%\setcounter{saveeqn01i}{\value{subsectioni}}%
+\renewcommand{\theequation}
+    {\alph{saveeqni}\mbox{.\arabic{equation}}}}%
+\newcommand{\reseteqni}{\setcounter{equation}{\value{saveeqni}}%
+\renewcommand{\theequation}{\arabic{equation}}}%
+
+\begin{document}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}%[section]
+% DEFINITIONS
+\theoremstyle{definition}
+\newtheorem{result}{Result}%[section]
+% REMARK
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}%[section]
+% PROPOSITION
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}%[section]
+% THEOREM
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}%[section]
+\theoremstyle{plain}
+\newtheorem{corollary}{Corollary}%[section]
+
+\begin{onehalfspacing}
+
+\vspace{1.0cm}
+
+%---------------------------------------------------------------------------------
+\noindent \textbf{Reply to Referee 2 of the manuscript ``How much work experience do you need to get your first job? The macroeconomic implications of bias against labor market entrants.''}
+
+\bigskip
+
+Dear Referee,
+
+\medskip
+
+Thank you very much for reading our paper so carefully, and for making such useful and constructive comments. We have revised the paper in an attempt to address your comments and questions. Attached is the revised version. In what follows, we detail how we addressed each of your comments (which we reproduce in bold text for everyone's convenience).
+
+Before we move on to the specific comments, let us point out some major changes in the revised manuscript, which should be clarified right away. 
+
+\textbf{First}, XXX 
+
+\textbf{Second}, XXX   
+
+
+Taken together, XXX
+
+Overall, XXX
+
+
+We now move on to the responses to your specific comments. 
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 1
+%---------------------------------------------------------------------------------
+\textbf{Comment 1: One assumption that I found not so well-motivated is that all worker types share the parameter values for bargaining power, UI/home production, and separation rates, among others. What can we learn from the data about differences in these parameters, e.g., separation rates across worker types?}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 2
+%---------------------------------------------------------------------------------
+\textbf{Comment 2: Relatedly, what is the role of expected employment duration for the training decision? Suppose inexperienced workers have lower separation rates, would this not increase firms' incentives to train them? Essentially, this is a story about firms free-riding on training provided by other firms, and the market failure gets worse because firms have no way of affecting their workers' employment duration, which seems to be a strong assumption in this setting. Do other papers allow training decisions to affect workers' (expected) tenure at the firm?}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 3
+%---------------------------------------------------------------------------------
+\textbf{Comment 3: Would it be possible to alleviate the market failure simply by assigning inexperienced unemployed workers a lower bargaining power parameter? What if entrant workers have zero bargaining power, would this be enough to get firms to hire them? What is the role of the outside options, which must differ across worker types, for bargaining power?}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 4
+%---------------------------------------------------------------------------------
+\textbf{Comment 4: What is the definition of experience in the data that is used in Figure 1? What is the empirical counterpart of the skill-loss shock in the data?}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 5
+%---------------------------------------------------------------------------------
+\textbf{Comment 5: This is a matter of taste, but I think that the lit review section 2.1 should be integrated into the introduction or be a separate section just after the introduction. Currently, it feels misplaced after the initial description of the model.}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 6
+%---------------------------------------------------------------------------------
+\textbf{Comment 6: The model appears to hit the unemployment rates of the different worker types very well (table 3). Could the authors show how the model does for the four unemployment rates by worker type?}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 7
+%---------------------------------------------------------------------------------
+\textbf{Comment 7: Relatedly, the only object that varies across worker types in the model is the job-finding rate, so the model can only match differences in unemployment rates through different job-finding rates. Related to my question above, if separation rates vary by type in the data, would the current approach not overstate differences in job-finding rates across worker types? And would this matter for the quantitative findings, which are driven by different job-finding rates? How is the fit for the different job-finding rates, table 4 only shows the model-generated values, not their empirical counterparts.}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 8
+%---------------------------------------------------------------------------------
+\textbf{Comment 8: Is it possible to compare the model-implied wage dispersion across worker types to the data?}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+%---------------------------------------------------------------------------------
+% Comment 9
+%---------------------------------------------------------------------------------
+\textbf{Comment 9: Apprenticeship training programs in some countries (e.g., Denmark, Germany) look a lot like some of the government interventions discussed in the paper. Could the authors add a short discussion about this? Also, it seems like there is a link to the literature on ``dual labor markets'', in which young and inexperienced workers can only get fixed-term contracts.}
+
+\medskip
+\noindent
+XXX
+
+\bigskip
+\bigskip
+
+\end{onehalfspacing}
+\end{document}

@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage[dvips]{graphicx}
+%\usepackage{achicago,setspace,multirow}
+\usepackage{setspace,palatino,multirow}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{subfig,comment}
+\usepackage{pdflscape}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  citecolor=darkblue,
+  linkcolor=darkblue,
+  pdfpagemode=none,
+  pdfstartview={FitH},
+  pdftitle={},
+  pdfauthor={GHL},
+  pdfkeywords={} }
+\usepackage[longnamesfirst]{natbib}
+\bibliographystyle{chicago}
+
+\special{papersize=8.5in,11in}
+
+\definecolor{darkred}{rgb}{0.66,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.25}
+
+\setlength{\parindent}{0.25in}
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+\textwidth15.75cm
+\evensidemargin5mm
+\oddsidemargin5mm
+\topmargin-15mm
+\textheight 22.7cm
+%\renewcommand{\arraystretch}{1.4}
+\hyphenation{over-lapping}
+
+\renewcommand{\arraystretch}{1.1}
+\usepackage[margin=2cm]{geometry}
+
+\newcounter{saveeqni}%
+\newcounter{saveeqn01i}%
+\newcommand{\alpheqni}{\setcounter{saveeqni}{\value{section}}%
+%\setcounter{saveeqn01i}{\value{subsectioni}}%
+\renewcommand{\theequation}
+    {\alph{saveeqni}\mbox{.\arabic{equation}}}}%
+\newcommand{\reseteqni}{\setcounter{equation}{\value{saveeqni}}%
+\renewcommand{\theequation}{\arabic{equation}}}%
+
+\begin{document}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}%[section]
+% DEFINITIONS
+\theoremstyle{definition}
+\newtheorem{result}{Result}%[section]
+% REMARK
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}%[section]
+% PROPOSITION
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}%[section]
+% THEOREM
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}%[section]
+\theoremstyle{plain}
+\newtheorem{corollary}{Corollary}%[section]
+
+\begin{onehalfspacing}
+
+\vspace{1.0cm}
+
+%---------------------------------------------------------------------------------
+
+\noindent \textbf{Reply to Editor of the manuscript ``How much work experience do you need to get your first job? The macroeconomic implications of bias against labor market entrants.''}
+
+\bigskip
+
+Dear Editor,
+
+\medskip
+
+Thank you very much for reading our paper so carefully, and for making such useful and constructive comments. We have revised the paper in an attempt to address your comments and questions. Attached is the revised version. In what follows, we detail how we addressed each of your comments (which we reproduce in bold text for everyone's convenience).
+
+Before we move on to the specific comments, let us point out some major changes in the revised manuscript, which should be clarified right away. 
+
+\textbf{First}, XXX 
+
+\textbf{Second}, XXX   
+
+
+Taken together, XXX
+
+Overall, XXX
+
+
+We now move on to the responses to your specific comments. 
+
+\bigskip
+\bigskip
+%---------------------------------------------------------------------------------
+% Comment 
+%---------------------------------------------------------------------------------
+\textbf{Comment 1: I would like you to address the comments of the referees (in the manuscript when appropriate, in the response letter elsewhere).}
+
+\medskip
+XXX
+
+\bigskip
+\bigskip
+%---------------------------------------------------------------------------------
+% Comment 
+%---------------------------------------------------------------------------------
+\textbf{Comment 2: I would like you to drop the section on alternative search models (competitive search and segmented search), as it contains potentially interesting results that deserve greater care than what you can afford at the end of a paper.}
+
+\medskip
+
+XXX
+
+
+\bigskip
+\bigskip
+%---------------------------------------------------------------------------------
+% Comment 
+%---------------------------------------------------------------------------------
+\textbf{Comment 3: I would like you to make sure that the firm’s profits are ordered in the same way as the ordering of worker productivities. For example, experienced workers are more productive than new entrants. Yet, new entrants have a lower value of unemployment than experience workers. Therefore, it is not immediately clear that the gains from
+trade between a firm and an experienced worker, and hence, the firm’s profits are larger than the
+gains from trade between a firm and a new entrant. Since a firm’s ranking should be based on profits rather than productivities, it would be important to check that the ordering of profits is the same as the ordering of productivities.}
+
+\medskip
+XXX
+\bigskip
+\bigskip
+\end{onehalfspacing}
+\end{document}
