@@ -1,0 +1,252 @@
+% main.tex
+% UC Davis Economics PhD Dissertation Master File
+% Compile with: latexmk -pdf main.tex
+
+\documentclass[12pt,oneside,openany]{report}
+
+% ------------------------------------------------------------
+% Page layout: UC Davis requires 1 inch margins on all sides.
+% ------------------------------------------------------------
+\usepackage[letterpaper,margin=1in]{geometry}
+
+% ------------------------------------------------------------
+% Font and spacing
+% UC Davis allows legible 10 to 13 point fonts, used consistently.
+% Dissertation must be double spaced, except conventional single-spaced elements.
+% ------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\doublespacing
+
+% ------------------------------------------------------------
+% Page numbers
+% UC Davis requires page numbers centered at the bottom.
+% Preliminary pages use lowercase roman numerals.
+% Body pages use Arabic numerals starting at 1.
+% ------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ------------------------------------------------------------
+% Figures, tables, captions, math, and landscape pages
+% ------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{float}
+
+% Number figures and tables by chapter, e.g., Figure 1.1, Table 1.1.
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+% ------------------------------------------------------------
+% Bibliography
+% Economics usually uses author-year citations.
+% UC Davis does not prescribe a specific bibliography style, but it must be consistent
+% and approved by the committee.
+% ------------------------------------------------------------
+\usepackage[round,authoryear]{natbib}
+\bibliographystyle{aea}
+
+% ------------------------------------------------------------
+% Hyperlinks and PDF metadata
+% Keep links unobtrusive in the submitted PDF.
+% For accessibility, add descriptive PDF metadata and use meaningful figure captions.
+% Full WCAG 2.1 AA compliance should still be checked in Acrobat or another tool.
+% ------------------------------------------------------------
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={DISSERTATION TITLE PLACEHOLDER},
+  pdfauthor={Shisham Adhikari},
+  pdfsubject={PhD Dissertation, Economics, UC Davis},
+  pdfkeywords={economics, dissertation, UC Davis}
+}
+
+% ------------------------------------------------------------
+% Optional: make chapter headings clean and simple.
+% Modify only if committee/department prefers a different style.
+% ------------------------------------------------------------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\centering}
+  {\chaptername\ \thechapter}
+  {1em}
+  {\Large}
+
+% ------------------------------------------------------------
+% User-defined metadata
+% Replace these placeholders before filing.
+% ------------------------------------------------------------
+\newcommand{\DissertationTitle}{DISSERTATION TITLE PLACEHOLDER}
+\newcommand{\AuthorName}{Shisham Adhikari}
+\newcommand{\DegreeName}{Doctor of Philosophy}
+\newcommand{\FieldName}{Economics}
+\newcommand{\UniversityName}{University of California, Davis}
+\newcommand{\GraduationYear}{2026}
+
+% Committee placeholders. Confirm exact title page wording with UC Davis sample/template.
+\newcommand{\CommitteeChair}{Committee Chair Name}
+\newcommand{\CommitteeMemberOne}{Committee Member Name}
+\newcommand{\CommitteeMemberTwo}{Committee Member Name}
+
+% ------------------------------------------------------------
+% Title page placeholder
+% IMPORTANT: UC Davis says title page spacing, language, and capitalization must match
+% the official sample/template exactly. This LaTeX version is a placeholder only.
+% Safest final workflow: create the title page from the UC Davis Word template,
+% export as PDF, and insert it as page i if exact matching is difficult in LaTeX.
+% ------------------------------------------------------------
+\newcommand{\MakeUCDavisTitlePage}{%
+\begin{titlepage}
+\thispagestyle{plain}
+\begin{center}
+
+{\Large \DissertationTitle\par}
+
+By\\
+\AuthorName
+
+DISSERTATION\\[0.15in]
+Submitted in partial satisfaction of the requirements for the degree of\\[0.15in]
+\DegreeName\\[0.15in]
+in\\[0.15in]
+\FieldName\\[0.15in]
+in the\\[0.15in]
+OFFICE OF GRADUATE STUDIES\\[0.15in]
+of the\\
+\UniversityName
+
+Approved:\\[0.4in]
+\rule{3.5in}{0.4pt}\\
+\CommitteeChair, Chair\\[0.35in]
+\rule{3.5in}{0.4pt}\\
+\CommitteeMemberOne\\[0.35in]
+\rule{3.5in}{0.4pt}\\
+\CommitteeMemberTwo
+
+Committee in Charge\\
+\GraduationYear
+
+\end{center}
+\end{titlepage}
+}
+
+\begin{document}
+
+% ------------------------------------------------------------
+% Preliminary pages
+% Title page is page i. Use lowercase roman numerals.
+% ------------------------------------------------------------
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\MakeUCDavisTitlePage
+
+% Optional copyright page:
+% UC Davis says this may be unnumbered and skipped in pagination.
+% Use only if needed. If used, check exact copyright formatting.
+% \clearpage
+% \thispagestyle{empty}
+% \null\vfill
+% \begin{center}
+% Copyright \copyright\ \GraduationYear\ by \AuthorName\\
+% All rights reserved.
+% \end{center}
+% \vfill\null
+% \clearpage
+% \setcounter{page}{2}
+
+% Optional dedication
+% \clearpage
+% \chapter*{Dedication}
+% \addcontentsline{toc}{chapter}{Dedication}
+% \input{frontmatter/dedication}
+
+% Optional acknowledgments
+\clearpage
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+\input{frontmatter/acknowledgments}
+
+% Required overall abstract
+\clearpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{frontmatter/abstract}
+
+% Table of contents and lists
+\clearpage
+\tableofcontents
+
+\clearpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\clearpage
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+% ------------------------------------------------------------
+% Body of dissertation
+% Arabic numerals begin at 1 and continue through the full body.
+% Do not restart numbering in later chapters or appendices.
+% ------------------------------------------------------------
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\chapter{Chapter One Title Placeholder}
+\input{chapters/chapter1}
+
+\chapter{Chapter Two Title Placeholder}
+\input{chapters/chapter2}
+
+\chapter{Chapter Three Title Placeholder}
+\input{chapters/chapter3}
+
+% ------------------------------------------------------------
+% Appendices
+% Use only if needed. Page numbering continues in Arabic numerals.
+% ------------------------------------------------------------
+\appendix
+
+\chapter{Appendix for Chapter One}
+\input{appendices/appendix_chapter1}
+
+\chapter{Appendix for Chapter Two}
+\input{appendices/appendix_chapter2}
+
+\chapter{Appendix for Chapter Three}
+\input{appendices/appendix_chapter3}
+
+% ------------------------------------------------------------
+% Bibliography
+% UC Davis leaves bibliography style to committee/field standards, but it must be consistent.
+% ------------------------------------------------------------
+\clearpage
+\singlespacing
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{references/dissertation}
+
+\end{document}
